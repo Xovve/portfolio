@@ -164,22 +164,22 @@
   }
 
   .hamburger.closed &__line.first {
-    @include animation("top-lane-close 1s 1");
+    @include animation("top-lane-close 0.8s 1");
   }
   .hamburger.closed &__line.second {
-    @include animation("middle-lane-close 1s 1");
+    @include animation("middle-lane-close 0.8s 1");
   }
   .hamburger.closed &__line.third {
-    @include animation("bottom-lane-close 1s 1");
+    @include animation("bottom-lane-close 0.8s 1");
   }
 
   .hamburger.opened &__line.first {
-    @include animation("top-lane-open 1s 1");
+    @include animation("top-lane-open 0.8s 1");
   }
   .hamburger.opened &__line.second {
     @include animation("middle-lane-open 0.1s 1");
   }
   .hamburger.opened &__line.third {
-    @include animation("bottom-lane-open 1s 1");
+    @include animation("bottom-lane-open 0.8s 1");
   }
 }

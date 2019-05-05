@@ -1,17 +1,19 @@
 import React from "react";
+import { connect } from "react-redux";
+import { toggleMenu } from "../actions";
 import "../styles/hamburger.scss";
 
 class Hamburger extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false,
       initiallyClicked: false
     };
   }
 
   onClickHandler = () => {
-    this.setState({ isOpened: !this.state.isOpened, initiallyClicked: true });
+    this.props.toggleMenu();
+    this.setState({ initiallyClicked: true });
   };
 
   renderHamburger() {
@@ -24,7 +26,7 @@ class Hamburger extends React.Component {
         </div>
       );
     } else {
-      const hamburgerClasses = this.state.isOpened
+      const hamburgerClasses = this.props.isOpened
         ? "hamburger opened"
         : "hamburger closed";
       return (
@@ -42,4 +44,11 @@ class Hamburger extends React.Component {
   }
 }
 
-export default Hamburger;
+const mapStateToProps = state => {
+  return { isOpened: state.isMenuOpened };
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleMenu }
+)(Hamburger);

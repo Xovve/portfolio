@@ -1,10 +1,11 @@
 import React from "react";
-import Hamburger from "./Hamburger";
+import Header from "./sections/Header";
+import "../styles/app.scss";
 
 const App = () => {
   return (
-    <div>
-      <Hamburger />
+    <div className="app">
+      <Header />
     </div>
   );
 };

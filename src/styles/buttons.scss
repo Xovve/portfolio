@@ -1,0 +1,15 @@
+.button {
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button i {
+  margin-left: 8px;
+}
+
+.button--orange {
+  background-color: #ee5b2c;
+  color: #fff;
+}
