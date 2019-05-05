@@ -1,0 +1,185 @@
+@import "mixins";
+
+@include keyframes(top-lane-open) {
+  0% {
+    top: 10px;
+    left: 5px;
+    transform: rotate(0deg);
+  }
+  25% {
+    top: 10px;
+    left: 50px;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: 10px;
+    left: 50px;
+    transform: rotate(-25deg);
+  }
+  75% {
+    top: -50px;
+    left: 50px;
+    transform: rotate(-45deg);
+  }
+  100% {
+    top: 20px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+}
+
+@include keyframes(middle-lane-open) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(bottom-lane-open) {
+  0% {
+    top: 30px;
+    left: 5px;
+    transform: rotate(0deg);
+  }
+  25% {
+    top: 30px;
+    left: -50px;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -50px;
+    left: -50px;
+    transform: rotate(45deg);
+  }
+  75% {
+    top: -50px;
+    left: -50px;
+    transform: rotate(45deg);
+  }
+  100% {
+    top: 20px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+}
+
+@include keyframes(top-lane-close) {
+  0% {
+    top: 20px;
+    left: 5px;
+    transform: rotate(-45deg);
+  }
+  25% {
+    top: 60px;
+    left: -60px;
+    transform: rotate(-45deg);
+  }
+  50% {
+    top: 100px;
+    left: 60px;
+    transform: rotate(-45deg);
+  }
+  75% {
+    top: 10px;
+    left: 60px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 10px;
+    left: 5px;
+    transform: rotate(0deg);
+  }
+}
+
+@include keyframes(middle-lane-close) {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(bottom-lane-close) {
+  0% {
+    top: 20px;
+    left: 5px;
+    transform: rotate(45deg);
+  }
+  25% {
+    top: 60px;
+    left: 60px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 100px;
+    left: 50px;
+    transform: rotate(45deg);
+  }
+  75% {
+    top: 30px;
+    left: -60px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 30px;
+    left: 5px;
+    transform: rotate(0deg);
+  }
+}
+
+.hamburger {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  &__line {
+    position: absolute;
+    left: 5px;
+    width: 30px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: black;
+  }
+  .hamburger &__line.first {
+    top: 10px;
+  }
+  .hamburger &__line.second {
+    top: 20px;
+  }
+  .hamburger &__line.third {
+    top: 30px;
+  }
+
+  .hamburger.closed &__line.first {
+    @include animation("top-lane-close 1s 1");
+  }
+  .hamburger.closed &__line.second {
+    @include animation("middle-lane-close 1s 1");
+  }
+  .hamburger.closed &__line.third {
+    @include animation("bottom-lane-close 1s 1");
+  }
+
+  .hamburger.opened &__line.first {
+    @include animation("top-lane-open 1s 1");
+  }
+  .hamburger.opened &__line.second {
+    @include animation("middle-lane-open 0.1s 1");
+  }
+  .hamburger.opened &__line.third {
+    @include animation("bottom-lane-open 1s 1");
+  }
+}
