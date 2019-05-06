@@ -1,10 +1,18 @@
+@import "variables";
+
 .header {
   position: relative;
-  height: 90vh;
+  height: 115vh;
   color: #fff;
+  @media screen and (min-width: $phone-breakpoint) {
+    height: 90vh;
+  }
   &__headline {
-    margin-top: 0;
+    margin-top: 100px;
     font-size: 55px;
+    @media screen and (min-width: $phone-breakpoint) {
+      margin-top: 0;
+    }
   }
   &__container {
     display: flex;
@@ -12,33 +20,18 @@
     justify-content: center;
     height: 100%;
   }
+  &__nav {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media screen and (min-width: $phone-breakpoint) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 }
 .header p {
   font-size: 16px;
   margin-top: 0;
-}
-.navbar {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 50px;
-  &__brand {
-    .name {
-      font-weight: 800;
-      font-size: 17px;
-      padding-bottom: 5px;
-      letter-spacing: -1px;
-    }
-    .title {
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-  }
-  &__menu {
-    z-index: 10;
-    display: flex;
-  }
 }

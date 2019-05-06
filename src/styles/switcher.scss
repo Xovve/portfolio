@@ -1,3 +1,64 @@
+@import "variables";
+
 .language-switcher {
   font-size: 16px;
+  padding: 10px 0;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media screen and (min-width: $phone-breakpoint) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+  }
+}
+.language-switcher span {
+  font-size: 14px;
+  margin-bottom: 5px;
+  @media screen and (min-width: $phone-breakpoint) {
+    margin: 0;
+  }
+}
+
+.switcher__box {
+  display: flex;
+}
+
+.switcher__button {
+  background-color: $themecolor--primary;
+  color: #fff;
+  border: 1px #042f4a solid;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px 5px;
+  transition: all 0.2s;
+  font-size: 10px;
+  &--left {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-left: 5px;
+  }
+  &--right {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .icon {
+    width: 18px;
+    border-radius: 2rem;
+    margin-right: 3px;
+  }
+}
+.switcher__button:hover {
+  background-color: #ba4822;
+}
+.switcher__button.active:hover {
+  background-color: #152ca1;
+}
+.switcher__button.active {
+  background-image: linear-gradient(#0e0340, #042f4a);
+  cursor: initial;
 }

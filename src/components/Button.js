@@ -3,9 +3,9 @@ import "../styles/buttons.scss";
 
 const Button = props => {
   return (
-    <button className={props.className} onClick={props.onClick}>
-      {props.text} <i class="fas fa-chevron-right" />
-    </button>
+    <a className={props.className} onClick={props.onClick}>
+      {props.text} <i className="fas fa-chevron-right" />
+    </a>
   );
 };
 

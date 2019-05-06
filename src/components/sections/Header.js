@@ -1,7 +1,7 @@
 import React from "react";
-import Hamburger from "../Hamburger";
 import { connect } from "react-redux";
-import LangSwitcher, { getTranslation } from "../LangSwitcher";
+import { getTranslation } from "../LangSwitcher";
+import Navbar from "../Navbar";
 import Button from "../Button";
 import "../../styles/header.scss";
 
@@ -24,32 +24,31 @@ class Header extends React.Component {
     const translations = {
       pol: {
         text1:
-          "Specjalizuję się w aplikacjach internetowych React / Redux. Obecnie mieszkam w Krakowie"
+          "Specjalizuję się w aplikacjach internetowych React / Redux. Obecnie mieszkam w Krakowie.",
+        textbutton1: "Zamawiam stronę",
+        textbutton2: "Szukam pracownika"
       },
       eng: {
         text1:
-          "Specializing in React / Redux web applications. Currently residing in Kraków, Poland"
+          "Specializing in React / Redux web applications. Currently residing in Kraków, Poland.",
+        textbutton1: "I want a website",
+        textbutton2: "I'm looking to hire"
       }
     };
     return (
       <div className="header" id="header">
         <div className="container header__container">
-          <nav className="navbar">
-            <div className="navbar__brand">
-              <div className="name">MACIEJ SROKA</div>
-              <div className="title">FRONT-END WEB DEVELOPER</div>
-            </div>
-            <div className="navbar__menu">
-              <LangSwitcher />
-              <Hamburger />
-            </div>
-          </nav>
+          <Navbar />
           <h2 className="header__headline">Front-end Web Developer.</h2>
           <p>{getTranslation(translations, language, "text1")}</p>
           <div className="header__nav">
             <Button
-              text="I'm looking to hire"
+              text={getTranslation(translations, language, "textbutton1")}
               className="button button--orange"
+            />
+            <Button
+              text={getTranslation(translations, language, "textbutton2")}
+              className="button button--blue m1"
             />
           </div>
         </div>

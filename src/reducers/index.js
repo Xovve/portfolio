@@ -9,10 +9,11 @@ const menuReducer = (state = false, action) => {
 };
 
 const languageReducer = (state = "eng", action) => {
-  if (action.type === "SWITCH_LANGUAGE") {
-    return action.payload;
-  } else {
-    return state;
+  switch (action.type) {
+    case "SWITCH_LANGUAGE":
+      return action.payload;
+    default:
+      return state;
   }
 };
 
