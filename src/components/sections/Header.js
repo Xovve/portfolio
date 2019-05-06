@@ -36,10 +36,10 @@ class Header extends React.Component {
       }
     };
     return (
-      <div className="header" id="header">
+      <header className="header" id="header">
         <div className="container header__container">
           <Navbar />
-          <h2 className="header__headline">Front-end Web Developer.</h2>
+          <h1 className="header__headline">Front-end Web Developer.</h1>
           <p>{getTranslation(translations, language, "text1")}</p>
           <div className="header__nav">
             <Button
@@ -52,7 +52,7 @@ class Header extends React.Component {
             />
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }
