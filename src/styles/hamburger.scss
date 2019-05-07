@@ -146,7 +146,11 @@
   overflow: hidden;
   width: 40px;
   height: 45px;
-  margin-left: 15px;
+  margin-top: 20px;
+  @media screen and (min-width: $phone-breakpoint) {
+    margin-top: 0;
+    justify-content: center;
+  }
   &__line {
     position: absolute;
     left: 5px;
@@ -166,22 +170,22 @@
   }
 
   .hamburger.closed &__line.first {
-    @include animation("top-lane-close 0.8s 1");
+    @include animation("top-lane-close 0.7s 1");
   }
   .hamburger.closed &__line.second {
-    @include animation("middle-lane-close 0.8s 1");
+    @include animation("middle-lane-close 0.7s 1");
   }
   .hamburger.closed &__line.third {
-    @include animation("bottom-lane-close 0.8s 1");
+    @include animation("bottom-lane-close 0.7s 1");
   }
 
   .hamburger.opened &__line.first {
-    @include animation("top-lane-open 0.8s 1");
+    @include animation("top-lane-open 0.7s 1");
   }
   .hamburger.opened &__line.second {
     @include animation("middle-lane-open 0.1s 1");
   }
   .hamburger.opened &__line.third {
-    @include animation("bottom-lane-open 0.8s 1");
+    @include animation("bottom-lane-open 0.7s 1");
   }
 }

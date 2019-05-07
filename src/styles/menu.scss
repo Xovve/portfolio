@@ -1,0 +1,28 @@
+@import "variables";
+
+.menu {
+  background-color: $themecolor--secondary;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100vw;
+  height: 0;
+  transition: height 0.8s, opacity 0.8s;
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: initial;
+    align-items: flex-end;
+    @media screen and (min-width: $phone-breakpoint) {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
+.menu.opened {
+  height: 50vh;
+  opacity: 0.95;
+}

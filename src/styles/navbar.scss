@@ -15,7 +15,10 @@
     padding: 10px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    @media screen and (min-width: $phone-breakpoint) {
+      padding: 10px 0;
+      justify-content: center;
+    }
     .name {
       font-weight: 800;
       font-size: 17px;
@@ -25,17 +28,6 @@
     .title {
       font-size: 10px;
       letter-spacing: 1px;
-    }
-  }
-  &__menu {
-    z-index: 10;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    @media screen and (min-width: $phone-breakpoint) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
     }
   }
 }
