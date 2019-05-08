@@ -10,7 +10,7 @@ const About = props => {
     pol: {
       text1: "Cześć! :) Witam na stronie mojego portfolio.",
       text2:
-        "Nazywam się Maciek, jestem Front-end Web Developerem (Tworzę interfejsy aplikacji i stron internetowych, które widzi końcowy użytkownik). Specjalizuję się w tworzeniu nowoczesnych, responsywnych interfejsów opartych na technologii ",
+        "Nazywam się Maciek, jestem Front-end Web Developerem (Tworzę interfejsy aplikacji i stron internetowych, które widzi końcowy użytkownik). Specjalizuję się w tworzeniu nowoczesnych, responsywnych stron opartych na technologii ",
       text3: " oraz ",
       text4:
         ". Potrafię także tworzyć podstawowe motywy do Systemu Zarządzania Treścią Wordpress oraz modyfikować przestarzały kod CSS na responsywny, odpowiedni dla smarfonów i kompatybilny z wszystkimi nowoczesnymi przeglądarkami."
@@ -18,7 +18,7 @@ const About = props => {
     eng: {
       text1: "Hi there! :) Welcome to my portfolio.",
       text2:
-        "My name is Maciek and I'm a Front-end Web Developer (I produce client-side interfaces for websites and web applications, that a user see and interact with). I specialize in creating modern responsive interfaces based on ",
+        "My name is Maciek and I'm a Front-end Web Developer (I produce client-side interfaces for websites and web applications, that a user see and interact with). I specialize in creating modern responsive websites based on ",
       text3: " and ",
       text4:
         " technologies. I can also create basic themes for Wordpress Content Managment System as well as modify outdated website CSS into a mobile-friendly compatible with all the modern browsers responsive styling."

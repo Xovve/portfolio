@@ -1,9 +1,15 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { useSpring, animated } from "react-spring";
+import { getTranslation } from "./LangSwitcher";
 import Button from "./Button";
 import "../styles/card.scss";
 
 const Card = props => {
+  const translations = {
+    pol: { button1: "Zobacz Na Żywo", button2: "Zobacz Kod" },
+    eng: { button1: "Live", button2: "Code" }
+  };
   let i = 0;
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -53,15 +59,17 @@ const Card = props => {
           </div>
         </div>
         <div className="card__controls" onClick={e => e.stopPropagation()}>
-          <Button
-            className="button button--orange"
-            text="Live"
-            href={flipped ? props.liveHref : null}
-            blank={true}
-          />
+          {props.liveHref ? (
+            <Button
+              className="button button--orange"
+              text={getTranslation(translations, props.language, "button1")}
+              href={flipped ? props.liveHref : null}
+              blank={true}
+            />
+          ) : null}
           <Button
             className="button button--bordered m2"
-            text="Code"
+            text={getTranslation(translations, props.language, "button2")}
             href={flipped ? props.codeHref : null}
             blank={true}
           />
@@ -71,4 +79,10 @@ const Card = props => {
   );
 };
 
-export default Card;
+const mapStateToProps = state => {
+  return {
+    language: state.language
+  };
+};
+
+export default connect(mapStateToProps)(Card);

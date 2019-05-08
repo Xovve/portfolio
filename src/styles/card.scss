@@ -4,10 +4,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 500px;
-  max-height: 500px;
-  width: 28vh;
-  height: 40vh;
+  width: 260px;
+  height: 375px;
   border-radius: 1rem;
   -webkit-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
@@ -16,8 +14,8 @@
   will-change: transform, opacity;
   &__box {
     position: relative;
-    padding-bottom: 43vh;
-    width: 28vh;
+    padding-bottom: 400px;
+    width: 260px;
   }
   &__title {
     font-size: 16px;
