@@ -61,7 +61,7 @@ const Portfolio = props => {
           />
           <Card
             title={getTranslation(translations, props.language, "title3")}
-            content="CRUD (Create, Read, Update, Delete) Application with Google Authentication made for learning purposes. You can stream your PC / Laptop screen through this app with a help of OBS program."
+            content="CRUD (Create, Read, Update, Delete) Application with Google Authentication. You can stream your PC / Laptop screen through this app with a help of OBS program."
             technologies={[
               "React",
               "React Router",

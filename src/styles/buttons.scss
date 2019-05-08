@@ -22,6 +22,12 @@
   color: #fff;
 }
 
+.button--bordered {
+  background-color: #fff;
+  border: 2px $themecolor--primary solid;
+  color: $themecolor--primary;
+}
+
 .m1 {
   margin-top: 25px;
   @media screen and (min-width: $phone-breakpoint) {

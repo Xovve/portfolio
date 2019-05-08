@@ -13,9 +13,7 @@ const Card = props => {
   });
 
   const onClickHandler = event => {
-    event.stopPropagation();
     set(state => !state);
-    console.log(event.target);
   };
   console.log(props.image);
   return (
@@ -54,17 +52,17 @@ const Card = props => {
             })}
           </div>
         </div>
-        <div className="card__controls">
+        <div className="card__controls" onClick={e => e.stopPropagation()}>
           <Button
             className="button button--orange"
             text="Live"
-            href={flipped ? null : props.liveHref}
+            href={flipped ? props.liveHref : null}
             blank={true}
           />
           <Button
-            className="button button--orange m2"
+            className="button button--bordered m2"
             text="Code"
-            href={flipped ? null : props.codeHref}
+            href={flipped ? props.codeHref : null}
             blank={true}
           />
         </div>
