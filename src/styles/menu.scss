@@ -1,28 +1,34 @@
 @import "variables";
 
 .menu {
-  background-color: $themecolor--secondary;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 50;
-  width: 100vw;
-  height: 0;
-  transition: height 0.8s, opacity 0.8s;
   &__container {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: initial;
-    align-items: flex-end;
+  }
+  &__slider {
+    background-color: $themecolor--secondary;
+    opacity: 1;
+    position: absolute;
+    top: -55vh;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 50vh;
+    transition: top 0.8s cubic-bezier(0.17, 0.04, 0.03, 0.94), opacity 0.8s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  }
+  &__toggler {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 25px;
     @media screen and (min-width: $phone-breakpoint) {
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
+      padding-right: 50px;
     }
   }
 }
-.menu.opened {
-  height: 50vh;
+.menu__slider.opened {
   opacity: 0.95;
+  top: 0;
 }

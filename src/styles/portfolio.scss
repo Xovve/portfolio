@@ -1,0 +1,11 @@
+.portfolio {
+  padding: 50px 0;
+  &__container {
+    position: relative;
+  }
+  &__projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

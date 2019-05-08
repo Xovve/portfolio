@@ -25,7 +25,7 @@ const About = props => {
     }
   };
   return (
-    <div className="about" id="about">
+    <section className="about" id="about">
       <div className="container about__container">
         <img className="about__image" src={face} alt="Maciek face photo" />
         <div className="data">
@@ -52,7 +52,7 @@ const About = props => {
         </div>
       </div>
       <Line />
-    </div>
+    </section>
   );
 };
 

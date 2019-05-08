@@ -5,6 +5,7 @@
 }
 body {
   font-size: 18px;
+  font-family: Open Sans, sans-serif;
 }
 .app {
   margin: 0 auto;
@@ -13,8 +14,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 25px;
-  font-family: Open Sans, sans-serif;
   @media screen and (min-width: $phone-breakpoint) {
     padding: 0 50px;
   }
+}
+.streamer {
+  color: $themecolor--primary;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-size: 33px;
 }

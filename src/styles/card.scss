@@ -1,0 +1,35 @@
+@import "variables";
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 500px;
+  max-height: 500px;
+  width: 25vh;
+  height: 40vh;
+  border-radius: 1rem;
+  padding: 25px;
+  -webkit-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  will-change: transform, opacity;
+  &__box {
+    position: relative;
+    padding-bottom: 43vh;
+    width: 25vh;
+  }
+  &__title {
+    color: $themecolor--secondary;
+  }
+}
+.back {
+  background-color: #fff;
+}
+.front {
+  background-color: $themecolor--primary;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

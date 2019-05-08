@@ -27,7 +27,7 @@ class Header extends React.Component {
         text1:
           "Specjalizuję się w aplikacjach internetowych React / Redux. Obecnie mieszkam w Krakowie.",
         textbutton1: "Szukam pracownika",
-        textbutton2: "Zamawiam stronę"
+        textbutton2: "Chcę zamówić stronę"
       },
       eng: {
         text1:

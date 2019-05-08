@@ -2,15 +2,14 @@
 
 .language-switcher {
   font-size: 16px;
-  padding: 20px 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding: 20px 0;
   @media screen and (min-width: $tablet-breakpoint) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 20px 15px;
   }
 }
 .language-switcher span {
