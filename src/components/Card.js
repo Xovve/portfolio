@@ -7,7 +7,7 @@ import "../styles/card.scss";
 
 const Card = props => {
   const translations = {
-    pol: { button1: "Zobacz Na Żywo", button2: "Zobacz Kod" },
+    pol: { button1: "Podgląd Na Żywo", button2: "Zobacz Kod" },
     eng: { button1: "Live", button2: "Code" }
   };
   let i = 0;

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./sections/Header";
 import About from "./sections/About";
 import Portfolio from "./sections/Portfolio";
+import Skills from "./sections/Skills";
 import "../styles/app.scss";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Header />
       <About />
       <Portfolio />
+      <Skills />
     </div>
   );
 };
