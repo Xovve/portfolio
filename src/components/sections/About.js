@@ -27,7 +27,7 @@ const About = props => {
   return (
     <section className="about" id="about">
       <div className="container about__container">
-        <img className="about__image" src={face} alt="Maciek face photo" />
+        <img className="about__image" src={face} alt="Maciek face" />
         <div className="data">
           <h3 className="heading">
             {getTranslation(translations, props.language, "text1")}

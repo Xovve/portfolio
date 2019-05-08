@@ -6,10 +6,9 @@
   left: 0;
   max-width: 500px;
   max-height: 500px;
-  width: 25vh;
+  width: 28vh;
   height: 40vh;
   border-radius: 1rem;
-  padding: 25px;
   -webkit-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
   box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
@@ -18,18 +17,48 @@
   &__box {
     position: relative;
     padding-bottom: 43vh;
-    width: 25vh;
+    width: 28vh;
   }
   &__title {
-    color: $themecolor--secondary;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(rgba(23, 42, 77, 0.7) 0%, rgba(23, 42, 77, 0.85) 100%);
+  }
+  &__content {
+    font-size: 15px;
+  }
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    .technology {
+      padding: 4px;
+      margin: 3px 3px 0 0;
+      border-radius: 8px;
+      background-color: $themecolor--primary;
+      color: #fff;
+    }
+  }
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
   }
 }
 .back {
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
 }
 .front {
-  background-color: $themecolor--primary;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding: 25px 0;
 }

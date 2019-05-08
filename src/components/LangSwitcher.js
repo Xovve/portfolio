@@ -27,7 +27,12 @@ const LangSwitcher = props => {
           lang="pol"
           onClick={onClickHandler}
         >
-          <img src={plicon} className="icon pl" lang="pol" />
+          <img
+            src={plicon}
+            className="icon pl"
+            lang="pol"
+            alt="Flag of Poland"
+          />
           POL
         </button>
         <button
@@ -39,7 +44,7 @@ const LangSwitcher = props => {
           lang="eng"
           onClick={onClickHandler}
         >
-          <img src={gbicon} className="icon gb" lang="eng" />
+          <img src={gbicon} className="icon gb" lang="eng" alt="Flag of GB" />
           ENG
         </button>
       </div>
