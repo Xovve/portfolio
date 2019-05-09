@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getTranslation } from "../LangSwitcher";
+import { Link } from "react-scroll";
 import Menu from "../Menu";
 import Navbar from "../Navbar";
 import Button from "../Button";
@@ -45,10 +46,13 @@ class Header extends React.Component {
             <h1 className="header__headline">Front-end Web Developer.</h1>
             <p>{getTranslation(translations, language, "text1")}</p>
             <div className="header__nav">
-              <Button
-                text={getTranslation(translations, language, "textbutton1")}
+              <Link
                 className="button button--orange"
-              />
+                to="contact"
+                smooth={true}
+              >
+                {getTranslation(translations, language, "textbutton1")}
+              </Link>
               <Button
                 text={getTranslation(translations, language, "textbutton2")}
                 className="button button--blue m1"

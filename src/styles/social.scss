@@ -1,0 +1,36 @@
+@import "variables";
+
+.social__menu {
+  margin-top: 15px;
+}
+.social__link {
+  text-decoration: none;
+}
+.social__link .iconify {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  color: $themecolor--primary;
+  transition: all 0.3s;
+}
+
+.social__wrapper .social__menu .social__link .iconify {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.social__wrapper .social__menu .social__link .gh:hover,
+.gh:hover {
+  color: #171515;
+}
+.social__wrapper .social__menu .social__link .linkedin:hover,
+.linkedin:hover {
+  color: #0077b5;
+}
+.social__wrapper .social__menu .social__link .mail:hover,
+.mail:hover {
+  color: #f82e2a;
+}

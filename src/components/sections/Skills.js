@@ -1,18 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
+import { getTranslation } from "../LangSwitcher";
 import "../../styles/skills.scss";
 
 const Skills = props => {
+  const translations = {
+    pol: {
+      streamer: "Umiejętności",
+      text: "Lista technologii, z którymi pracowałem i które znam:"
+    },
+    eng: {
+      streamer: "Skills",
+      text: "List of technologies I have worked with and I'm familliar with:"
+    }
+  };
   return (
     <section className="skills" id="skills">
-      <h2 className="streamer">Skills</h2>
+      <h2 className="streamer streamer--margin2">
+        {getTranslation(translations, props.language, "streamer")}
+      </h2>
       <div className="container skills__container">
         <div className="skills__content">
-          I am aware that front-end technologies change every day and there is
-          so much information about every programming language / framework /
-          library that rating your knowledge about each and every one of them
-          seems pretty ignorant. That's why instead of rating them I provide you
-          with a list of technologies I have worked with and I'm fammiliar with.
+          {getTranslation(translations, props.language, "text")}
         </div>
         <div className="list skills__list">
           <div className="list__item">

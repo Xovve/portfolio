@@ -21,7 +21,6 @@ const Card = props => {
   const onClickHandler = event => {
     set(state => !state);
   };
-  console.log(props.image);
   return (
     <div className="card__box">
       <animated.div

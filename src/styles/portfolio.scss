@@ -1,9 +1,6 @@
 @import "variables";
 .portfolio {
   padding-top: 75px;
-  @media screen and (min-width: $tablet-breakpoint) {
-    padding-top: 100px;
-  }
   &__container {
     position: relative;
     border-bottom: 1px #e0e0e0 solid;

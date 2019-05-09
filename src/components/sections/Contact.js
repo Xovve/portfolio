@@ -2,8 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 import axios from "axios";
-import Button from "../Button";
 import { getTranslation } from "../LangSwitcher";
+import Button from "../Button";
+import Social from "../Social";
 import face from "../../static/mafejs.jpg";
 import "../../styles/contact.scss";
 
@@ -48,46 +49,47 @@ class Contact extends React.Component {
   render() {
     const { pristine, submitting } = this.props;
     const translations = {
-      pol: {},
-      eng: {}
+      pol: {
+        streamer: "Kontakt",
+        contactbutton: "KONTAKT",
+        name: "Imię",
+        phone: "Numer Telefonu",
+        message: "Twoja Wiadomość...",
+        submit: "Wyślij",
+        nameerror: "Musisz wpisać swoje imię",
+        emailerror: "Musisz wpisać swój adres e-mail",
+        texterror: "Musisz wpisać wiadomość"
+      },
+      eng: {
+        streamer: "Contact",
+        contactbutton: "CONTACT ME",
+        name: "Name",
+        phone: "Phone",
+        message: "Your Message...",
+        submit: "Submit",
+        nameerror: "You must enter your name",
+        emailerror: "You must enter your email",
+        texterror: "You must enter a message"
+      }
     };
     return (
       <section className="contact" id="contact">
-        <h2 className="streamer">Contact</h2>
+        <h2 className="streamer">
+          {getTranslation(translations, this.props.language, "streamer")}
+        </h2>
         <div className="container contact__container">
           <div className="social">
-            <img className="social__photo" src={face} />
+            <img className="social__photo" src={face} alt="Maciek face" />
             <Button
-              text="CONTACT ME"
+              text={getTranslation(
+                translations,
+                this.props.language,
+                "contactbutton"
+              )}
               className="button button--orange button--contact"
               href="mailto:sroka.maciej@o2.pl"
             />
-            <div className="social__menu">
-              <a className="social__link" href="https://github.com/Xovve">
-                <span
-                  className="iconify gh"
-                  data-icon="ant-design:github-fill"
-                  data-inline="false"
-                />
-              </a>
-              <a
-                className="social__link"
-                href="https://www.linkedin.com/in/maciej-sroka-18364615b/"
-              >
-                <span
-                  className="iconify linkedin"
-                  data-icon="ant-design:linkedin-fill"
-                  data-inline="false"
-                />
-              </a>
-              <a className="social__link" href="mailto:sroka.maciej@o2.pl">
-                <span
-                  className="iconify"
-                  data-icon="foundation:mail"
-                  data-inline="false"
-                />
-              </a>
-            </div>
+            <Social />
           </div>
           <form
             className="form"
@@ -97,7 +99,11 @@ class Contact extends React.Component {
               <Field
                 name="name"
                 component={this.renderInput}
-                placeholder="Name"
+                placeholder={getTranslation(
+                  translations,
+                  this.props.language,
+                  "name"
+                )}
               />
               <Field
                 type="email"
@@ -109,14 +115,22 @@ class Contact extends React.Component {
                 type="number"
                 name="phone"
                 component={this.renderInput}
-                placeholder="Phone"
+                placeholder={getTranslation(
+                  translations,
+                  this.props.language,
+                  "phone"
+                )}
               />
             </div>
             <div className="form__container">
               <Field
                 name="text"
                 component={this.renderTextarea}
-                placeholder="Your Message"
+                placeholder={getTranslation(
+                  translations,
+                  this.props.language,
+                  "message"
+                )}
               />
             </div>
             <button
@@ -124,7 +138,7 @@ class Contact extends React.Component {
               className="button button--bordered button--submit"
               disabled={pristine || submitting}
             >
-              Submit
+              {getTranslation(translations, this.props.language, "submit")}
             </button>
           </form>
         </div>
@@ -133,16 +147,28 @@ class Contact extends React.Component {
   }
 }
 
-const validate = formValues => {
+const validate = (formValues, props) => {
+  const translations = {
+    pol: {
+      nameerror: "Musisz wpisać swoje imię",
+      emailerror: "Musisz wpisać swój adres e-mail",
+      texterror: "Musisz wpisać wiadomość"
+    },
+    eng: {
+      nameerror: "You must enter your name",
+      emailerror: "You must enter your email",
+      texterror: "You must enter a message"
+    }
+  };
   const errors = {};
   if (!formValues.name) {
-    errors.name = "You must enter your name.";
+    errors.name = getTranslation(translations, props.language, "nameerror");
   }
   if (!formValues.email) {
-    errors.email = "You must enter your email.";
+    errors.email = getTranslation(translations, props.language, "emailerror");
   }
   if (!formValues.text) {
-    errors.text = "You must enter a message.";
+    errors.text = getTranslation(translations, props.language, "texterror");
   }
 
   return errors;
@@ -154,9 +180,9 @@ const mapStateToProps = state => {
   };
 };
 
-Contact = connect(mapStateToProps)(Contact);
-
-export default reduxForm({
+Contact = reduxForm({
   form: "contact",
   validate
 })(Contact);
+
+export default connect(mapStateToProps)(Contact);

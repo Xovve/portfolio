@@ -17,6 +17,11 @@
 .button--orange {
   background-color: $themecolor--primary;
   color: #fff;
+  transition: all 0.4s;
+}
+
+.button--orange:hover {
+  background-color: $themecolor--hover;
 }
 
 .button--blue {
@@ -38,16 +43,21 @@
 .button--submit {
   width: 100%;
   align-self: flex-end;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   @media screen and (min-width: $tablet-breakpoint) {
     width: 20%;
   }
 }
 
 .button--contact {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   margin-top: 15px;
+  padding: 12px 12px;
+  @media screen and (min-width: $tablet-breakpoint) {
+    font-size: 12px;
+  }
 }
 
 .m1 {
