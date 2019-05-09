@@ -41,11 +41,11 @@
   &__link {
     position: relative;
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
     text-transform: uppercase;
     margin: 10px 0;
-    letter-spacing: 2px;
-    font-weight: 700;
+    letter-spacing: 1px;
+    font-weight: 400;
     transition: color 0.4s;
     cursor: pointer;
   }
@@ -78,5 +78,8 @@
 }
 
 .social__wrapper {
-  padding: 0 100px 0 0;
+  padding: 25px 100px 0 0;
+  @media screen and (min-width: $phone-breakpoint) {
+    padding: 0 100px 0 0;
+  }
 }
