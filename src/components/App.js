@@ -1,3 +1,4 @@
+import { connect } from "react-redux";
 import React from "react";
 import Header from "./sections/Header";
 import About from "./sections/About";
@@ -7,9 +8,9 @@ import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import "../styles/app.scss";
 
-const App = () => {
+const App = props => {
   return (
-    <div className="app">
+    <div className="app" lang={props.language === "pol" ? "pl" : "en"}>
       <Header />
       <About />
       <Portfolio />
@@ -20,4 +21,10 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    language: state.language
+  };
+};
+
+export default connect(mapStateToProps)(App);

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm, reset } from "redux-form";
 import axios from "axios";
 import { getTranslation } from "../LangSwitcher";
 import Button from "../Button";
@@ -9,6 +9,9 @@ import face from "../../static/mafejs.jpg";
 import "../../styles/contact.scss";
 
 class Contact extends React.Component {
+  state = {
+    submitMessage: ""
+  };
   renderError({ error, touched }) {
     if (touched && error) {
       return (
@@ -18,16 +21,39 @@ class Contact extends React.Component {
       );
     }
   }
-  onSubmit = (event, formValues) => {
-    axios
+  onSubmit = async (formValues, dispatch) => {
+    const translations = {
+      pol: {
+        success: "Wiadomość wysłana!",
+        senderror: "Błąd, spróbuj wysłać ponownie."
+      },
+      eng: {
+        success: "Message sent successfuly!",
+        senderror: "Error, try submitting again."
+      }
+    };
+    await axios
       .post("https://formcarry.com/s/3UBwYCpNGhy", formValues, {
         headers: { Accept: "application/json" }
       })
-      .then(function(response) {
-        console.log(response);
+      .then(response => {
+        dispatch(reset("contact"));
+        this.setState({
+          submitMessage: getTranslation(
+            translations,
+            this.props.language,
+            "success"
+          )
+        });
       })
-      .catch(function(error) {
-        console.log(error);
+      .catch(error => {
+        this.setState({
+          submitMessage: getTranslation(
+            translations,
+            this.props.language,
+            "senderror"
+          )
+        });
       });
   };
   renderInput = ({ input, meta, placeholder }) => {
@@ -55,10 +81,7 @@ class Contact extends React.Component {
         name: "Imię",
         phone: "Numer Telefonu",
         message: "Twoja Wiadomość...",
-        submit: "Wyślij",
-        nameerror: "Musisz wpisać swoje imię",
-        emailerror: "Musisz wpisać swój adres e-mail",
-        texterror: "Musisz wpisać wiadomość"
+        submit: "Wyślij"
       },
       eng: {
         streamer: "Contact",
@@ -66,10 +89,7 @@ class Contact extends React.Component {
         name: "Name",
         phone: "Phone",
         message: "Your Message...",
-        submit: "Submit",
-        nameerror: "You must enter your name",
-        emailerror: "You must enter your email",
-        texterror: "You must enter a message"
+        submit: "Submit"
       }
     };
     return (
@@ -93,7 +113,7 @@ class Contact extends React.Component {
           </div>
           <form
             className="form"
-            onSubmit={this.props.handleSubmit(this.onSubmit)}
+            onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}
           >
             <div className="form__container">
               <Field
@@ -133,6 +153,7 @@ class Contact extends React.Component {
                 )}
               />
             </div>
+            <div className="submitmessage">{this.state.submitMessage}</div>
             <button
               type="submit"
               className="button button--bordered button--submit"
