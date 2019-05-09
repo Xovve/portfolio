@@ -1,53 +1,106 @@
 @import "variables";
 
 .skills {
+  border-bottom: 1px #e0e0e0 solid;
+  padding-top: 75px;
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    padding-top: 100px;
+  }
   &__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding-bottom: 75px;
+    @media screen and (min-width: $tablet-breakpoint) {
+      flex-direction: row;
+      padding-bottom: 125px;
+    }
   }
   &__content {
     font-size: 16px;
-    width: 50%;
+    width: 100%;
     line-height: 27px;
+    padding: 0;
+    @media screen and (min-width: $tablet-breakpoint) {
+      width: 40%;
+      padding-right: 25px;
+    }
   }
-  &__list {
+  .list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    .fab {
-      flex: 1 0 25%;
-      padding: 0 25px 115px 25px;
+    padding: 25px 0;
+    width: 100%;
+    @media screen and (min-width: $tablet-breakpoint) {
+      padding: 0;
+      width: 60%;
+    }
+    &__item {
+      position: relative;
+      display: flex;
+      padding: 25px;
+      .caption {
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.4s;
+        padding-bottom: 100%;
+        padding-right: 5px;
+        padding-left: 5px;
+        color: $themecolor--secondary;
+      }
+    }
+
+    .iconify {
       width: 75px;
       height: 75px;
-      font-size: 75px;
-      color: $themecolor--secondary;
       transition: all 0.4s;
     }
-    .fa-html5:hover {
+
+    .html {
       color: #e34f26;
     }
-    .fa-css3-alt:hover {
+    .css {
       color: #167dbe;
     }
-    .fa-sass:hover {
+    .sass {
       color: #cc6699;
     }
-    .fa-js-square:hover {
+    .js {
       color: #ffc600;
     }
-    .fa-react:hover {
+    .react {
       color: #00d8ff;
     }
-    .fa-gulp:hover {
+    .redux {
+      color: #764abc;
+    }
+    .gulp {
       color: #d6504f;
     }
-    .fa-github:hover {
+    .git {
       color: #171515;
     }
-    .fa-wordpress:hover {
+    .wordpress {
       color: #21759b;
     }
-    .fa-magento:hover {
+    .magento {
       color: #ec5d21;
+    }
+    .webpack {
+      color: #8ed6fb;
+    }
+    .babel {
+      color: #eacf3a;
+    }
+    .bootstrap {
+      color: #563d7c;
+    }
+    .jquery {
+      color: #21609b;
     }
   }
 }

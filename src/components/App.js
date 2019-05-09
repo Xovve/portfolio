@@ -3,6 +3,8 @@ import Header from "./sections/Header";
 import About from "./sections/About";
 import Portfolio from "./sections/Portfolio";
 import Skills from "./sections/Skills";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 import "../styles/app.scss";
 
 const App = () => {
@@ -12,6 +14,8 @@ const App = () => {
       <About />
       <Portfolio />
       <Skills />
+      <Contact />
+      <Footer />
     </div>
   );
 };

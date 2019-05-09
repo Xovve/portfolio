@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getTranslation } from "../LangSwitcher";
-import Line from "../Line";
 import face from "../../static/mafejs.jpg";
 import "../../styles/about.scss";
 
@@ -51,7 +50,6 @@ const About = props => {
           </div>
         </div>
       </div>
-      <Line />
     </section>
   );
 };

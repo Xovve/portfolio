@@ -1,24 +1,25 @@
 @import "variables";
 
 .about {
-  padding: 50px 0;
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 1px #e0e0e0 solid;
+    padding-top: 75px;
+    padding-bottom: 75px;
     @media screen and (min-width: $tablet-breakpoint) {
       flex-direction: row;
       justify-content: space-between;
+      padding-top: 100px;
+      padding-bottom: 125px;
     }
   }
   &__image {
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10%;
     width: 300px;
     height: 300px;
-    -webkit-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
-    box-shadow: -2px 3px 6px -1px rgba(0, 0, 0, 0.75);
   }
 }
 

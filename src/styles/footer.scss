@@ -1,0 +1,19 @@
+@import "variables";
+
+.footer {
+  padding: 50px 0;
+  background-color: $background-color;
+  &__container {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .higlighted {
+    color: $themecolor--primary;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 27px;
+  }
+}

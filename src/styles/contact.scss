@@ -1,0 +1,116 @@
+@import "variables";
+
+.contact {
+  padding-top: 75px;
+  -webkit-box-shadow: 1px 10px 6px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 10px 6px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 10px 6px -6px rgba(0, 0, 0, 0.75);
+  position: relative;
+  @media screen and (min-width: $tablet-breakpoint) {
+    padding-top: 100px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 125px;
+    @media screen and (min-width: $tablet-breakpoint) {
+      flex-direction: row;
+      padding-bottom: 75px;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $tablet-breakpoint) {
+    width: 75%;
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 25px 0;
+  }
+  .input-wrapper {
+    width: 30%;
+  }
+
+  .textarea-wrapper,
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .textarea-wrapper {
+    width: 100%;
+    .textarea {
+      resize: none;
+      width: 100%;
+      height: 300px;
+    }
+  }
+  .textarea,
+  .input {
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: $themecolor--secondary;
+    font-size: 16px;
+  }
+  ::-webkit-input-placeholder {
+    color: #808080;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #808080;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #808080;
+  }
+  :-ms-input-placeholder {
+    color: #808080;
+  }
+
+  .input {
+    padding: 10px;
+  }
+  .textarea {
+    padding: 15px;
+  }
+  .error {
+    margin-top: 5px;
+    &__message {
+      color: $themecolor--primary;
+      font-size: 12px;
+    }
+  }
+}
+.social {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
+  @media screen and (min-width: $tablet-breakpoint) {
+    width: 25%;
+    padding-bottom: 0;
+  }
+  &__photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  &__menu {
+    margin-top: 15px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $themecolor--primary;
+  }
+  &__link .iconify {
+    width: 40px;
+    height: 40px;
+  }
+}

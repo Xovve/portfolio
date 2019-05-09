@@ -9,7 +9,12 @@ const Button = props => {
       href={props.href}
       target={props.blank ? "_blank" : ""}
     >
-      {props.text} <i className="fas fa-chevron-right" />
+      {props.text}
+      <span
+        className="iconify"
+        data-icon="dashicons:arrow-right-alt2"
+        data-inline="false"
+      />
     </a>
   );
 };

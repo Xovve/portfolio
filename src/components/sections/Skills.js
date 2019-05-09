@@ -14,16 +14,119 @@ const Skills = props => {
           seems pretty ignorant. That's why instead of rating them I provide you
           with a list of technologies I have worked with and I'm fammiliar with.
         </div>
-        <div className="skills__list">
-          <i class="fab fa-html5" />
-          <i class="fab fa-css3-alt" />
-          <i class="fab fa-sass" />
-          <i class="fab fa-js-square" />
-          <i class="fab fa-react" />
-          <i class="fab fa-gulp" />
-          <i class="fab fa-github" />
-          <i class="fab fa-wordpress" />
-          <i class="fab fa-magento" />
+        <div className="list skills__list">
+          <div className="list__item">
+            <div className="caption">HTML5</div>
+            <span
+              className="iconify html"
+              data-icon="icomoon-free:html-five"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">CSS3</div>
+            <span
+              className="iconify css"
+              data-icon="fa-brands:css3-alt"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">SASS</div>
+            <span
+              className="iconify sass"
+              data-icon="fa-brands:sass"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">JavaScript(ES6)</div>
+            <span
+              className="iconify js"
+              data-icon="zmdi:language-javascript"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">React</div>
+            <span
+              className="iconify react"
+              data-icon="fa-brands:react"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Redux</div>
+            <span
+              className="iconify redux"
+              data-icon="simple-icons:redux"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Gulp</div>
+            <span
+              className="iconify gulp"
+              data-icon="fa-brands:gulp"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Git</div>
+            <span
+              className="iconify git"
+              data-icon="fa-brands:git-alt"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Webpack</div>
+            <span
+              className="iconify webpack"
+              data-icon="simple-icons:webpack"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Wordpress</div>
+            <span
+              className="iconify wordpress"
+              data-icon="el:wordpress"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Magento</div>
+            <span
+              className="iconify magento"
+              data-icon="fa-brands:magento"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Babel</div>
+            <span
+              className="iconify babel"
+              data-icon="mdi:babel"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">Bootstrap</div>
+            <span
+              className="iconify bootstrap"
+              data-icon="simple-icons:bootstrap"
+              data-inline="false"
+            />
+          </div>
+          <div className="list__item">
+            <div className="caption">jQuery</div>
+            <span
+              className="iconify jquery"
+              data-icon="mdi:jquery"
+              data-inline="false"
+            />
+          </div>
         </div>
       </div>
     </section>

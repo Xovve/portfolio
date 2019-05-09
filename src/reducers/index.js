@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
 
 const menuReducer = (state = false, action) => {
   if (action.type === "TOGGLE_MENU") {
@@ -19,5 +20,6 @@ const languageReducer = (state = "eng", action) => {
 
 export default combineReducers({
   isMenuOpened: menuReducer,
-  language: languageReducer
+  language: languageReducer,
+  form: formReducer
 });

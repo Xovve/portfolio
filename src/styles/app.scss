@@ -13,9 +13,11 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding-left: 25px;
+  padding-right: 25px;
   @media screen and (min-width: $phone-breakpoint) {
-    padding: 0 50px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 .streamer {
