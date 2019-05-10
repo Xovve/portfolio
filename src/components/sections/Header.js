@@ -2,9 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getTranslation } from "../LangSwitcher";
 import { Link } from "react-scroll";
-import Menu from "../Menu";
 import Navbar from "../Navbar";
-import Button from "../Button";
 import "../../styles/header.scss";
 
 class Header extends React.Component {
@@ -27,19 +25,16 @@ class Header extends React.Component {
       pol: {
         text1:
           "Specjalizuję się w aplikacjach internetowych React / Redux. Obecnie mieszkam w Krakowie.",
-        textbutton1: "Szukam pracownika",
-        textbutton2: "Chcę zamówić stronę"
+        textbutton1: "Szukam pracownika"
       },
       eng: {
         text1:
           "Specializing in React / Redux web applications. Currently residing in Kraków, Poland.",
-        textbutton1: "I'm looking to hire",
-        textbutton2: "I want a website"
+        textbutton1: "I'm looking to hire"
       }
     };
     return (
       <header className="header" id="header">
-        <Menu />
         <div className="container header__container">
           <Navbar />
           <div className="content">
@@ -53,10 +48,6 @@ class Header extends React.Component {
               >
                 {getTranslation(translations, language, "textbutton1")}
               </Link>
-              <Button
-                text={getTranslation(translations, language, "textbutton2")}
-                className="button button--blue m1"
-              />
             </div>
           </div>
         </div>

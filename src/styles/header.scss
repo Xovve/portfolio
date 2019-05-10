@@ -4,15 +4,16 @@
   position: relative;
   height: 115vh;
   color: #fff;
+  overflow: hidden;
   @media screen and (min-width: $phone-breakpoint) {
-    height: 95vh;
+    height: 100vh;
   }
   &__headline {
     margin-top: 100px;
     font-size: 45px;
     @media screen and (min-width: $phone-breakpoint) {
       margin-top: 0;
-      font-size: 55px;
+      font-size: 60px;
     }
   }
   &__container {

@@ -143,6 +143,7 @@
 .hamburger {
   position: absolute;
   top: 15px;
+  right: 15px;
   z-index: 999;
   cursor: pointer;
   overflow: hidden;
@@ -150,6 +151,7 @@
   height: 45px;
   @media screen and (min-width: $phone-breakpoint) {
     justify-content: center;
+    right: 50px;
   }
   &__line {
     position: absolute;
