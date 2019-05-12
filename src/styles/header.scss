@@ -5,7 +5,10 @@
   height: 100vh;
   color: #fff;
   overflow: hidden;
-  @media screen and (min-width: $phone-breakpoint) {
+  @media (max-height: $phone-breakpoint) {
+    height: 155vh;
+  }
+  @media (min-width: $phone-breakpoint) and (min-height: $phone-breakpoint) {
     height: 100vh;
   }
   &__headline {
