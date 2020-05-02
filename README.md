@@ -1,8 +1,3 @@
-# Portfolio
-
-My portfolio website.
-[msroka.com](https://msroka.com)
-
 ## Technologies Used
 
 [React](https://github.com/facebook/react)<br>
