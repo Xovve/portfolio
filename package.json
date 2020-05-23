@@ -12,7 +12,9 @@
     "react-scroll": "^1.7.11",
     "react-spring": "^8.0.20",
     "redux": "^4.0.1",
-    "redux-form": "^8.2.0"
+    "redux-form": "^8.2.0",
+    "three": "^0.116.1",
+    "vanta": "^0.5.15"
   },
   "scripts": {
     "start": "react-scripts start",
